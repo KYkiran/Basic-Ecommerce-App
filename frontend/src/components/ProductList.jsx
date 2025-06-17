@@ -1,6 +1,5 @@
 import { useQuery, useMutation, useQueryClient } from 'react-query';
 import { fetchProducts, deleteProduct } from '../api';
-import { API_URL } from '../api';
 import { Trash, Edit } from 'lucide-react';
 
 const ProductList = ({ setEditProduct, showToast }) => {
@@ -38,7 +37,7 @@ const ProductList = ({ setEditProduct, showToast }) => {
         <div className="bg-red-100 dark:bg-red-900 border border-red-400 dark:border-red-700 text-red-700 dark:text-red-200 px-4 py-3 rounded">
           <p className="font-bold">Error fetching products</p>
           <p>{error.message || 'Unknown error'}</p>
-          <p className="text-sm mt-2">Check that your backend server is running at {API_URL}/products</p>
+          <p className="text-sm mt-2">Check that your backend server is running at api/products</p>
         </div>
       </div>
     );

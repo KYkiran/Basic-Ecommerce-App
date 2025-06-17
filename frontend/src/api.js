@@ -1,11 +1,8 @@
-const API_URL = 'http://localhost:5000/api'; // Make sure this port matches your backend
-
-export { API_URL };
 
 export const fetchProducts = async () => {
   try {
-    console.log('Fetching products from:', `${API_URL}/products`);
-    const response = await fetch(`${API_URL}/products`);
+    console.log('Fetching products from:', `api/products`);
+    const response = await fetch(`api/products`);
     
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
@@ -26,7 +23,7 @@ export const fetchProducts = async () => {
 };
 
 export const createProduct = async (productData) => {
-  const response = await fetch(`${API_URL}/products`, {
+  const response = await fetch(`api/products`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -44,7 +41,7 @@ export const createProduct = async (productData) => {
 };
 
 export const updateProduct = async (productData) => {
-  const response = await fetch(`${API_URL}/products/${productData._id}`, {
+  const response = await fetch(`api/products/${productData._id}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
@@ -62,7 +59,7 @@ export const updateProduct = async (productData) => {
 };
 
 export const deleteProduct = async (id) => {
-  const response = await fetch(`${API_URL}/products/${id}`, {
+  const response = await fetch(`api/products/${id}`, {
     method: 'DELETE',
   });
   
